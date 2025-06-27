@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "807125399871",
+    "project_id": "i-c-task",
+    "storage_bucket": "i-c-task.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807125399871:android:ddf3f8f070b04441097b8a",
+        "android_client_info": {
+          "package_name": "com.example.i_c_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwLmg5C77kKJDwsqArUwwsVjErYykZCtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
