@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -10,12 +12,11 @@ import 'package:i_c_task/routes.dart';
 import '../../../core/constants/colors_core.dart';
 import '../../../core/constants/size_box_core.dart';
 import '../../../core/shared_widgets/circle_image_widget.dart';
-import '../../../core/shared_widgets/name_and_icon_widget.dart';
-import '../../../core/shared_widgets/show_text_and_con_widget.dart';
+import 'local_widgets/edit_and_order_screen_button.dart';
+import 'local_widgets/name_and_email_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
-
-  ProfileScreen({super.key});
+  const ProfileScreen({super.key});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -29,8 +30,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
+    File? args = Get.arguments as File?;
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -50,11 +53,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   if (user != null) {
                     return Column(
                       children: [
-                        CircleImageWidget(
-                          imagePath: "assets/images/onboardingImage.jpg",
-                        ),
+                        args!=null?CircleImageWidget(imagePath: args): SizedBox(
+                          height: 150.h,
+                          width: 150.w,
+                          child: CircleAvatar(
+                            backgroundImage:AssetImage("assets/images/onboardingImage.jpg",),
 
-                        ShowTextAndIconWidget(
+                          ),
+                        ),
+                        verticalSize(40),
+                        NameAndEmailWidget(
                           containerColor: ColorsCore.salmonColor,
                           widgets: [
                             Text(
@@ -69,7 +77,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ],
                         ),
 
-                        ShowTextAndIconWidget(
+                        verticalSize(20),
+                        NameAndEmailWidget(
                           containerColor: ColorsCore.salmonColor,
                           widgets: [
                             Text(
@@ -97,7 +106,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   return Center(child: CircularProgressIndicator());
                 }),
 
-                ShowTextAndIconWidget(
+                NameAndEmailWidget(
                   containerColor: ColorsCore.terracottaColor,
                   height: 60,
                   widgets: [
@@ -107,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         onTap: () {
                           Get.toNamed(AppRoutes.editPage);
                         },
-                        child: NameAndIconWidget(
+                        child: EditAndOrdersScreenButton(
                           name: "Edit Profile",
                           icon: Icons.person,
                         ),
@@ -120,7 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         onTap: () {
                           Get.toNamed(AppRoutes.orderPage);
                         },
-                        child: NameAndIconWidget(
+                        child: EditAndOrdersScreenButton(
                           name: "Orders",
                           icon: Icons.line_weight_sharp,
                         ),

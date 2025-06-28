@@ -20,6 +20,11 @@ dependencies:
   # this back end to storage data
   cloud_firestore: ^5.6.9
   firebase_core: ^3.14.0
+  firebase_storage: ^12.4.7
+  image_picker: ^1.1.2
+  permission_handler: ^12.0.0+1
+  device_info_plus: ^11.5.0
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

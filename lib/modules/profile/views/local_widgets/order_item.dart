@@ -59,7 +59,7 @@ class OrderItem extends StatelessWidget {
                     Text(
                       ordersDataClass.title,
                       style: TextStyleCore.font16whiteWeight600.copyWith(
-                        color: ColorsCore.salmonColor,
+                        color: ColorsCore.terracottaColor,
                       ),
                     ),
                     Text(
@@ -106,11 +106,11 @@ class OrderItem extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.delete_outline_outlined,
-                    color: ColorsCore.salmonColor,
+                    color: ColorsCore.terracottaColor,
                   ),
                   Icon(
                     Icons.add_circle,
-                    color: ColorsCore.salmonColor,
+                    color: ColorsCore.terracottaColor,
                   ),
                 ],
               ),

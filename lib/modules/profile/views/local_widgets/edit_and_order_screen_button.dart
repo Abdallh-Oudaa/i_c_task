@@ -4,10 +4,10 @@ import 'package:i_c_task/core/constants/text_style_core.dart';
 
 
 
-class NameAndIconWidget extends StatelessWidget {
+class EditAndOrdersScreenButton extends StatelessWidget {
   final String name;
   final IconData icon;
-  const NameAndIconWidget({super.key,required this.name,required this.icon});
+  const EditAndOrdersScreenButton({super.key,required this.name,required this.icon});
 
   @override
   Widget build(BuildContext context) {

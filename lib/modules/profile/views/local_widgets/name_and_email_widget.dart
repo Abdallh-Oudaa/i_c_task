@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
-class ShowTextAndIconWidget extends StatelessWidget {
+class NameAndEmailWidget extends StatelessWidget {
 
   final Color containerColor;
   final int? height;
   final List<Widget> widgets;
 
-  const ShowTextAndIconWidget({
+  const NameAndEmailWidget({
     super.key,
 
     required this.containerColor,
