@@ -48,3 +48,7 @@ Orders Screen
 
 <img src="assets/screen_shots/orders%20screen.png" width="250"/>
 
+
+
+### Note: i cant use storage from firebase to sotre the pictuer beacouse i have a  problem with my account so i used shared prefs until i'll fix my problem
+
