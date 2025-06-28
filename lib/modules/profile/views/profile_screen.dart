@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:i_c_task/core/constants/text_style_core.dart';
+import 'package:i_c_task/modules/profile/conteroller/gallery_controller.dart';
 
 import 'package:i_c_task/modules/profile/conteroller/profile_controller.dart';
 
@@ -23,17 +24,19 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final controller = Get.find<ProfileController>();
+  final profileController = Get.find<ProfileController>();
+  final galleryController = Get.find<GalleryController>();
+
   @override
   void initState() {
-    controller.getUser();
+    profileController.getUser();
 
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    File? args = Get.arguments as File?;
+   // File? args = Get.arguments as File?;
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -47,13 +50,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Text("My Profile", style: TextStyleCore.font25SalmonBold),
 
                 Obx(() {
-                  final user = controller.user.value;
-                  final error = controller.exception.value;
+                  final user = profileController.user.value;
+                  final error = profileController.exception.value;
 
                   if (user != null) {
                     return Column(
                       children: [
-                        args!=null?CircleImageWidget(imagePath: args): SizedBox(
+                        galleryController.imageFile.value!=null?CircleImageWidget(imagePath: galleryController.imageFile.value!): SizedBox(
                           height: 150.h,
                           width: 150.w,
                           child: CircleAvatar(

@@ -7,6 +7,7 @@ import 'package:i_c_task/core/constants/colors_core.dart';
 import 'package:i_c_task/core/constants/size_box_core.dart';
 import 'package:i_c_task/core/shared_widgets/circle_image_widget.dart';
 import 'package:i_c_task/modules/profile/conteroller/edit_profile_controller.dart';
+import 'package:i_c_task/modules/profile/conteroller/gallery_controller.dart';
 
 import '../../../core/constants/email_regex.dart';
 import '../../../core/constants/text_style_core.dart';
@@ -15,7 +16,9 @@ import '../../../core/shared_widgets/text_form_core.dart';
 import 'local_widgets/button_section.dart';
 
 class EditProfile extends StatelessWidget {
-  final controller = Get.find<EditProfileController>();
+  final editController = Get.find<EditProfileController>();
+  final galleryController = Get.find<GalleryController>();
+
 
   EditProfile({super.key});
 
@@ -32,7 +35,7 @@ class EditProfile extends StatelessWidget {
           height: 400.h,
 
           child: Form(
-            key: controller.formKey,
+            key: editController.formKey,
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,9 +50,9 @@ class EditProfile extends StatelessWidget {
                           height: 150.h,
                           width: 150.w,
                           child: Obx(() {
-                            if (controller.imageFile.value != null) {
+                            if (galleryController.imageFile.value != null) {
                               return CircleImageWidget(
-                                imagePath: controller.imageFile.value!,
+                                imagePath: galleryController.imageFile.value!,
                               );
                             } else {
                               return CircleAvatar(backgroundColor: Colors.grey);
@@ -79,7 +82,7 @@ class EditProfile extends StatelessWidget {
                   ),
                   TextFormCore(
                     hintText: "click here to edit name",
-                    textEditingController: controller.nameController,
+                    textEditingController: editController.nameController,
                     validation: (text) {
                       if (text!.trim().isEmpty) {
                         return "field is empty";
@@ -92,7 +95,7 @@ class EditProfile extends StatelessWidget {
                   ),
                   TextFormCore(
                     hintText: "click here to change email",
-                    textEditingController: controller.emailController,
+                    textEditingController: editController.emailController,
                     validation: (text) {
                       if (text!.trim().isEmpty) {
                         return "field is empty";
@@ -110,7 +113,7 @@ class EditProfile extends StatelessWidget {
                   ButtonSection(
                     iconText: "update profile",
                     onPressedFunc: () {
-                      controller.updateUser();
+                      editController.updateUser();
                     },
                   ),
                 ],
@@ -137,9 +140,9 @@ class EditProfile extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () async {
-                        final temp = await controller.cameraPicker();
+                        final temp = await galleryController.cameraPicker();
                         if (temp != null) {
-                          controller.imageFile.value = temp;
+                          galleryController.imageFile.value = temp;
                         }
                       },
                       icon: Icon(
@@ -157,9 +160,9 @@ class EditProfile extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () async {
-                        final temp = await controller.galleryPicker();
+                        final temp = await galleryController.galleryPicker();
                         if (temp != null) {
-                          controller.imageFile.value = temp;
+                          galleryController.imageFile.value = temp;
                           if(context.mounted){
                             Navigator.pop(context);
                           }
