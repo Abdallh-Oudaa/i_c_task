@@ -1,16 +1,40 @@
-# i_c_task
+📝 i-c-task App
 
-A new Flutter project.
+📌 Description
 
-## Getting Started
+Flutter app that allows users to store and manage their name, email, and profile picture.
 
-This project is a starting point for a Flutter application.
+🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+ • 👤 Profile screen
+ • 📦 Orders screen (with static data)
+ • 📝 Edit profile screen
+ • 💾 Save data using Shared Preferences
+ • 📸 Pick images from gallery or camera
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🧠 Tech Stack
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ • ⚙️ Flutter
+ • 🔥 Firebase
+ • 🗂️ MVVM + Repository pattern
+ • 🧠 GetX (State management + DI + Navigation)
+ • 🎯 Shared Preferences
+ • 🖼️ Image Picker
+ • 📱 Responsive UI
+
+📷 Screenshots
+
+Profile
+
+<img src="images/profile_screen.jpeg" width="250"/>
+
+
+Edit Profile
+
+<img src="images/edit_profile_screen.jpeg" width="250"/>
+
+
+Validation Errors
+
+<img src="images/edit_profile_error.jpeg" width="250"/>
+
