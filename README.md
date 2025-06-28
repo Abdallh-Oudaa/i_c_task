@@ -50,5 +50,5 @@ Orders Screen
 
 
 
-### Note: i cant use storage from firebase to sotre the pictuer beacouse i have a  problem with my account so i used shared prefs until i'll fix my problem
+### Note: i use fireStore to storage name and email but i cant use storage from firebase to sotre the pictuer beacouse i have a  problem(not free for me)so i used shared prefs until i'll fix my problem
 
