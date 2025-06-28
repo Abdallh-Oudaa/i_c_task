@@ -1,12 +1,7 @@
-import 'dart:io';
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import 'package:i_c_task/data/repository/repository_contract.dart';
-import 'package:image_picker/image_picker.dart';
-
 
 import '../../../routes.dart';
 
@@ -19,7 +14,6 @@ class EditProfileController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   @override
-
   EditProfileController(this.repositoryContract);
   updateUser() async {
     if (formKey.currentState!.validate()) {
@@ -28,7 +22,7 @@ class EditProfileController extends GetxController {
           nameController.text,
           emailController.text,
         );
-        Get.toNamed(AppRoutes.profilePage,/*arguments:imageFile.value*/ );
+        Get.toNamed(AppRoutes.profilePage /*arguments:imageFile.value*/);
         nameController.clear();
         emailController.clear();
       } catch (e) {
@@ -36,7 +30,4 @@ class EditProfileController extends GetxController {
       }
     }
   }
-
-
-
 }

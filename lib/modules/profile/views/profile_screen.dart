@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -36,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-   // File? args = Get.arguments as File?;
+    // File? args = Get.arguments as File?;
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -56,14 +54,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   if (user != null) {
                     return Column(
                       children: [
-                        galleryController.imageFile.value!=null?CircleImageWidget(imagePath: galleryController.imageFile.value!): SizedBox(
-                          height: 150.h,
-                          width: 150.w,
-                          child: CircleAvatar(
-                            backgroundImage:AssetImage("assets/images/onboardingImage.jpg",),
-
-                          ),
-                        ),
+                        galleryController.imageFile.value != null
+                            ? CircleImageWidget(
+                                imagePath: galleryController.imageFile.value!,
+                              )
+                            : SizedBox(
+                                height: 150.h,
+                                width: 150.w,
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                    "assets/images/onboardingImage.jpg",
+                                  ),
+                                ),
+                              ),
                         verticalSize(40),
                         NameAndEmailWidget(
                           containerColor: ColorsCore.salmonColor,
