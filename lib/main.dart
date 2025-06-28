@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:i_c_task/modules/profile/bindings/gallery_binding.dart';
 import 'package:i_c_task/modules/profile/conteroller/edit_profile_controller.dart';
 
 import 'package:i_c_task/routes.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
          theme: ThemeData(
            scaffoldBackgroundColor: ColorsCore.whiteColor
          ),
-
+initialBinding: GalleryBinding(),
         initialRoute: AppRoutes.profilePage,
         getPages: AppRoutes.routes,
       ),
