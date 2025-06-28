@@ -16,4 +16,9 @@ class RepositoryImpl extends RepositoryContract{
     return dataSourceContract.getUserFromFireStore();
   }
 
+  @override
+  Future<void> updateUser(String name, String email) {
+  return dataSourceContract.updateUser(name, email);
+  }
+
 }

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:i_c_task/modules/profile/bindings/edit_profile_binding.dart';
 import 'package:i_c_task/modules/profile/bindings/orders_binding.dart';
 import 'package:i_c_task/modules/profile/bindings/profile_bindings.dart';
 import 'package:i_c_task/modules/profile/views/edit_profile.dart';
@@ -11,7 +12,7 @@ class AppRoutes{
   static const orderPage="/order_page";
   static final routes=[
   GetPage(name: profilePage, page:() => ProfileScreen(),binding: ProfileBinding()),
-    GetPage(name: editPage, page:() => EditProfile(),),
+    GetPage(name: editPage, page:() => EditProfile(),binding: EditProfileBinding()),
     GetPage(name: orderPage, page:() => OrdersScreen(),binding: OrdersBinding()),
   ];
 }
