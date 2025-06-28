@@ -26,12 +26,12 @@ Flutter app that allows users to store and manage their name, email, and profile
 
 Profile
 
-<img src="assets/screen_shots/profile%20screen.pngg" width="250"/>
+<img src="assets/screen_shots/profile%20screen.png" width="250"/>
 
 
 Edit Profile
 
-<img src="assets/screen_shots/edit%20profile%20screen.pngg" width="250"/>
+<img src="assets/screen_shots/edit%20profile%20screen.png" width="250"/>
 
 
 Validation Errors
